@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper PPT"
+  short_description: "Create academic paper PPTs with original figures"
+  default_prompt: "Use $paper-ppt to create or revise a Chinese academic paper-reading PPT with original paper figures, speaker notes, and layout validation."
