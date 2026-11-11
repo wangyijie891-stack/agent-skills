@@ -1,19 +1,21 @@
-# 汇报备注模板
+# Speaker Notes Template
 
-每页备注建议使用一段连贯中文，不写提纲式碎片。
+Write one coherent paragraph per slide in the user's requested language or language mix. Do not force Chinese, English, or any other language when the user asks for something else. Keep the notes suitable for oral reporting rather than a list of fragments.
 
-## 痛点页
+If the user does not specify a language, use the language of the latest request. If the requested language is ambiguous, ask before drafting.
 
-先说明真实任务中的失败模式，再解释为什么通用成功率或语言推理不能覆盖它，最后提出论文要解决的安全问题。
+## Problem slide
 
-## 方法页
+Explain the concrete failure mode or research gap, why common success metrics or prior reasoning do not cover it, and the question the paper addresses.
 
-按照图中的数据流讲：输入是什么，经过哪一个模块，产生什么中间表示，如何影响下一步动作，执行后如何反馈。若有训练，明确数据来源、标签、模型结构、冻结/微调部分和损失函数。
+## Method slide
 
-## 实验页
+Follow the figure's data flow: inputs, modules, intermediate representations, decisions, outputs, and feedback. If the paper trains a model, state data sources, labels, architecture, frozen/fine-tuned parts, and loss functions.
 
-先交代环境、机器人、任务难度、基线和运行次数，再解释每个指标的含义、单位、分母和优劣方向，最后只陈述图表支持的结论。
+## Experiment slide
 
-## 结果与边界页
+State the environment, system, task difficulty, baselines, and run count before explaining each metric's meaning, unit, denominator, and direction of improvement. State only conclusions supported by the figures and tables.
 
-先用原生定性图解释机制，再用消融或表格说明哪个组件带来变化，最后区分论文已经验证的内容和仍未覆盖的安全维度。
+## Results and boundary slide
+
+Use the original qualitative figure to explain the mechanism, use ablations or tables to identify which component changes the result, and separate verified claims from untested limitations.
