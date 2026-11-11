@@ -1,11 +1,11 @@
 ---
 name: paper-ppt
-description: Create Chinese academic paper-reading PPTs for research papers from any field, using original paper figures, a restrained deep-blue template, detailed method/experiment explanations, speaker notes, and layout validation.
+description: Create academic paper-reading PPTs in the language or languages requested by the user, for research papers from any field, using original paper figures, a restrained deep-blue template, detailed method/experiment explanations, speaker notes, and layout validation.
 ---
 
 # Paper PPT
 
-This skill turns a published academic paper into a compact, visual PPT for Chinese oral reporting. It is field-agnostic: use it for robotics, embodied AI, machine learning, computer vision, NLP, systems, or other empirical research papers. Adapt the method and metric explanations to the paper rather than forcing an embodied-safety vocabulary.
+This skill turns a published academic paper into a compact, visual PPT for oral reporting in the user's requested language. It is language-agnostic and field-agnostic: use it for any written or spoken language and for robotics, embodied AI, machine learning, computer vision, NLP, systems, or other empirical research papers. Adapt the method and metric explanations to the paper rather than forcing an embodied-safety vocabulary.
 
 ## Non-negotiable output rules
 
@@ -13,8 +13,8 @@ This skill turns a published academic paper into a compact, visual PPT for Chine
 - Use the paper's original figures and tables whenever they are available. Crop only the figure/table region from the PDF; do not replace an available original with a hand-drawn schematic. Editorial redraws are allowed only for a relationship that the paper does not provide as a figure, and must be labelled `本文重绘`.
 - Do not place surrounding body text, neighboring columns, or unrelated captions inside an image crop. Keep a crop manifest with source PDF hash, page, coordinates, and meaning.
 - Use the lightweight template specification in `assets/template-spec.md` together with `references/style-guide.md` as the visual reference. Keep the slide canvas 16:9, light gray background, dark navy headings, restrained blue accents, rectangular information blocks, and no decorative visual clutter. The template is a style reference, not a restriction on scientific content.
-- All editable slide text uses Microsoft YaHei / 微软雅黑. Keep the paper title prominent at the top-left of the first slide; put the Chinese subtitle or translation beneath it in a smaller size.
-- Every slide gets fluent Chinese speaker notes. Notes must explain the story represented by the figure before interpreting numbers; avoid phrases such as “左侧/右侧/第二幅图” when the structure can be described by content.
+- Use a font that supports the requested language and script. Microsoft YaHei / 微软雅黑 remains the default for Chinese decks; for other scripts, choose an appropriate installed font rather than allowing missing-glyph boxes. Keep the paper title prominent at the top-left of the first slide and put the subtitle or translation beneath it in the requested language when useful.
+- Every slide gets fluent speaker notes in the requested language or language mix. Notes must explain the story represented by the figure before interpreting numbers; avoid positional phrases such as “left/right/second figure” when the structure can be described by content.
 - No text or image may cross the slide boundary. Keep tables readable and never squeeze a complete table into a tiny unreadable thumbnail.
 
 ## Default four-slide story
@@ -27,6 +27,10 @@ Use this structure unless the user requests another page count:
 4. **机制证据、消融与边界** — original qualitative comparison/ablation figure and table; connect the result to the claimed mechanism, then state limitations and research direction.
 
 For a three-page request, merge pages 1 and 4. For six or nine pages, expand each module while preserving the same narrative order.
+
+## Language selection
+
+Language is never fixed by this skill. Follow an explicit user request for one language, multiple languages, translation, or bilingual output. If no language is specified, use the language of the user's latest request; if the request is genuinely ambiguous, ask once before drafting. Keep technical names, equations, variable names, and quoted paper text when they improve fidelity, but explain surrounding content in the selected language. Apply the same language choice to headings, diagrams, captions, alt text, tables, and speaker notes.
 
 ## Working procedure
 
