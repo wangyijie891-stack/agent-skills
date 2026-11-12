@@ -1,39 +1,39 @@
-# 深蓝学术 PPT 样式规范
+# Deep-Blue Academic PPT Style Guide
 
-## 页面与颜色
+## Canvas and colors
 
-- 画布：16:9，13.333 × 7.5 英寸。
-- 背景：`#F3F5F7`。
-- 主标题：`#12395B`；强调蓝：`#1B5A85`；正文：`#263F57`；辅助文字：`#647789`；边框：`#C9D3DC`；浅蓝填充：`#EAF1F6`。
-- 不使用大面积渐变、阴影、插画、彩色装饰条或无信息量的图标。
-- 默认使用矩形框；只有在用户明确要求时才使用大面积圆角卡片。
+- Canvas: 16:9, 13.333 × 7.5 inches.
+- Background: `#F3F5F7`.
+- Main heading: `#12395B`; accent blue: `#1B5A85`; body text: `#263F57`; secondary text: `#647789`; border: `#C9D3DC`; pale blue fill: `#EAF1F6`.
+- Avoid large gradients, heavy shadows, decorative illustrations, colorful bars, or icons without information value.
+- Use rectangular information blocks by default. Use large rounded cards only when the user explicitly requests them.
 
-## 字体层级
+## Type hierarchy
 
-- 第一页论文英文全称：16–20 pt，深蓝，加粗。
-- 第一页中文标题：20–24 pt，深蓝，加粗。
-- 普通页标题：20–22 pt，深蓝，加粗。
-- 分区标题：12–14 pt，深蓝，加粗。
-- 正文：10.5–12 pt；表格说明：8.5–10 pt；页眉辅助信息：9–11 pt。
-- 中文默认使用 `Microsoft YaHei`，并设置 `a:ea` 字体属性；其他语言使用覆盖相应文字系统的字体，避免缺字方框。整套 PPT 保持统一的字体层级和字重。
+- Full paper title on slide 1: 16–20 pt, navy, bold.
+- Localized title or subtitle: 20–24 pt when it is the main title, navy, bold.
+- Regular slide title: 20–22 pt, navy, bold.
+- Section heading: 12–14 pt, navy, bold.
+- Body text: 10.5–12 pt; table notes: 8.5–10 pt; header metadata: 9–11 pt.
+- Use a font with complete glyph coverage for the requested language. Microsoft YaHei is the default for Chinese; other scripts require an appropriate installed font. Keep font hierarchy and weight consistent across the deck.
 
-## 版式约束
+## Layout constraints
 
-- 顶部页眉约 0.2–0.85 英寸，主标题从 1.0 英寸附近开始；底部保留至少 0.35 英寸安全区。
-- 每页最多 2–3 个信息区。一个信息区只回答一个问题。
-- 原图优先使用 contain，不拉伸、不裁掉坐标轴、图例、表头或关键注释。
-- 原图旁边必须有一句可见解释，说明读者该看什么、为什么重要；不能只放图不讲图。
-- 一页中同时出现原图和说明文字时，先给图足够尺寸，再压缩装饰元素；不要把正文缩成不可读的小字。
-- 长公式、长英文表头、多个指标时，优先拆分为两块或使用原表裁图，避免溢出。
+- Reserve about 0.2–0.85 inches for the top header and start the main title near 1.0 inches. Keep at least 0.35 inches of bottom safe area.
+- Use no more than two or three information zones per slide. Each zone should answer one question.
+- Use contain-style placement for original figures. Do not stretch or crop axes, legends, table headers, or key annotations.
+- Put one visible explanatory sentence beside every original figure. The sentence must tell the audience what to inspect and why it matters.
+- When figures and text share a slide, give the figure enough area first and compress decoration before shrinking explanatory text.
+- For long formulas, long table headers, or many metrics, split the content or use the original table crop instead of allowing overflow.
 
-## 原图标签
+## Original-figure labels
 
-- 原生裁图的标题或旁注写 `原论文 Figure N` / `原论文 Table N`。
-- 重绘图必须写 `本文重绘 · 原论文 Figure N`，不可让读者误以为是原图。
-- 原图不得包含正文双栏或邻栏内容；若图和 caption 无法分离，保留 caption，但不要把正文段落一并放入 PPT。
+- Label a native crop as `Original Figure N` or `Original Table N`.
+- Label a redraw as `Redrawn for this presentation · Original Figure N` so it is never mistaken for the paper figure.
+- Do not include two-column body text or neighboring-column content inside a figure crop. If the caption cannot be separated, retain the caption but exclude surrounding paragraphs.
 
-## 备注写法
+## Speaker-note structure
 
-备注按“问题 → 图中证据 → 方法/指标 → 结论 → 边界”组织。
+Organize notes as: problem → figure evidence → method or metric → conclusion → boundary.
 
-不要说“看左边/看右边/第二幅图”。应说“任务翻译链路”“安全预测模块”“真机 Hard 场景”等内容性名称。
+Avoid positional phrases such as “look left”, “look right”, or “second figure”. Use content-based names such as “task translation pipeline”, “risk prediction module”, or “hard real-robot setting”.
