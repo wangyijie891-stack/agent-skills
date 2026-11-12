@@ -1,15 +1,15 @@
 # Paper PPT
 
-通用学术论文精读与汇报 PPT skill，支持用户指定的任意语言，适用于机器人、具身智能、计算机视觉、自然语言处理、机器学习和其他研究论文。
+A reusable academic paper-reading and presentation skill for any user-requested language. It supports robotics, embodied AI, computer vision, natural language processing, machine learning, systems, and other research papers.
 
-## 目录
+## Contents
 
-- `skills/paper-ppt/SKILL.md`：skill 入口
-- `skills/paper-ppt/references/`：原生图裁剪、版式和汇报备注规范
-- `skills/paper-ppt/scripts/`：原生图提取与 PPT 结构校验脚本
+- `skills/paper-ppt/SKILL.md`: skill entry point
+- `skills/paper-ppt/references/`: original-figure extraction, layout, and speaker-note guidance
+- `skills/paper-ppt/scripts/`: repeatable figure extraction and PPT structural validation
 
-## 设计原则
+## Design principles
 
-深蓝学术风格、脚本兼容字体、论文原生图表、四页默认叙事结构和逐页用户指定语言的汇报备注。
+Deep-blue academic styling, script-compatible fonts, original paper figures and tables, a four-slide default narrative, and speaker notes written in the user's requested language.
 
-完整论文截图和大体积示例 PPT 不随 skill 分发；制作具体论文 PPT 时，从论文正式版 PDF 裁取对应原生图表。
+Large example PPT files and paper-specific figures are intentionally excluded from the distributable skill. Extract original figures from the official paper PDF when creating a concrete presentation.
