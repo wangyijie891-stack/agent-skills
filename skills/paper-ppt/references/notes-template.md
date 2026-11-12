@@ -1,6 +1,6 @@
 # Speaker Notes Template
 
-Write one coherent paragraph per slide in the user's requested language or language mix. Do not force Chinese, English, or any other language when the user asks for something else. Keep the notes suitable for oral reporting rather than a list of fragments.
+Write one coherent paragraph per slide in the language requested by the user. Do not force Chinese, English, or any other language when the user asks for something else. Keep the notes suitable for oral reporting rather than a list of fragments.
 
 If the user does not specify a language, use the language of the latest request. If the requested language is ambiguous, ask before drafting.
 
@@ -10,7 +10,7 @@ Explain the concrete failure mode or research gap, why common success metrics or
 
 ## Method slide
 
-Follow the figure's data flow: inputs, modules, intermediate representations, decisions, outputs, and feedback. If the paper trains a model, state data sources, labels, architecture, frozen/fine-tuned parts, and loss functions.
+Follow the figure's data flow: inputs, modules, intermediate representations, decisions, outputs, and feedback. If the paper trains a model, state data sources, labels, architecture, frozen or fine-tuned parts, and loss functions.
 
 ## Experiment slide
 
