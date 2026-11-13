@@ -17,16 +17,18 @@ This skill turns a published academic paper into a compact, visual PPT for oral 
 - Every slide gets fluent speaker notes in the requested language or language mix. Notes must explain the story represented by the figure before interpreting numbers; avoid positional phrases such as “left”, “right”, or “second figure” when the structure can be described by content.
 - No text or image may cross the slide boundary. Keep tables readable and never squeeze a complete table into an unreadable thumbnail.
 
-## Default four-slide story
+## Adaptive page architecture
 
-Use this structure unless the user requests another page count:
+Do not force every paper into exactly four slides. Choose the page count from the paper's evidence, the user's requested length, and the amount of explanation needed. A typical deck has 3–8 slides, but a different count is valid when it improves comprehension.
 
-1. **Problem and research question** — full paper title, concrete failure case or research gap, what prior systems miss, and the paper's central question or contribution.
-2. **Method and training/inference modules** — one original framework figure, inputs → transformations → decisions → outputs or feedback, equations or labels needed to understand the method, and the training procedure when learning is involved.
-3. **Experiment setup and core results** — original dataset, scene, or setup figure plus an original result table or chart; name baselines, data split or run count, metrics, denominators, and what each metric means.
-4. **Mechanism evidence, ablations, and boundaries** — original qualitative comparison or ablation figure and table; connect results to the claimed mechanism, then state limitations and research directions.
+Keep the narrative order below while splitting or merging sections as needed:
 
-For a three-page request, merge pages 1 and 4. For six or nine pages, expand each module while preserving the same narrative order.
+1. **Problem and research question** — full paper title, concrete failure case or research gap, what prior systems miss, and the central question or contribution. This slide may be text-only when a figure would not add evidence.
+2. **Method and training/inference modules** — inputs → transformations → decisions → outputs or feedback. Split this into multiple slides when the framework, training data, objective, and inference loop cannot remain readable together.
+3. **Experiment setup and core results** — dataset, scene, system, baselines, run count, metrics, and original result figures or tables. Separate setup from results when the original evidence is dense.
+4. **Mechanism evidence, ablations, and boundaries** — qualitative comparisons, ablations, limitations, and research directions. Use a text-only synthesis slide when the paper has no meaningful qualitative figure.
+
+The first slide is allowed to have zero pictures. A later slide needs an original figure or table only when the paper provides one and the slide's argument depends on it. Record the intended figure-bearing slide numbers with `--require-original-slides` when strict checking is desired; do not hard-code a universal page count.
 
 ## Language selection
 
@@ -39,7 +41,7 @@ Language is never fixed by this skill. Follow an explicit user request for one l
 3. Draft the slide story from the evidence: problem → mechanism → experiment → mechanism evidence and limitations. Keep claims narrower than the paper's actual evaluation scope.
 4. Build the deck with the reference template or an equivalent `python-pptx` script. Use `references/style-guide.md` for spacing, colors, type scale, font coverage, and safe image placement.
 5. Add speaker notes from `references/notes-template.md`. Include a short interpretation of every key metric, including whether higher or lower is better and what the denominator is.
-6. Run `scripts/validate_ppt.py` and `unzip -t` on the final PPTX. If LibreOffice rendering is available, export PDF or PNG and inspect every slide visually. If rendering is blocked by the runtime, report that only structural checks were completed; do not claim visual QA passed.
+6. Run `scripts/validate_ppt.py` and `unzip -t` on the final PPTX. The validator accepts adaptive page counts, checks 16:9 geometry, reads the original-figure manifest when present, verifies crop-file hashes and original-image markers, checks caption contamination, and inspects both Latin and East Asian font declarations. Use `--require-original-slides 2,3,4 --strict-original` only when those slides are intended to contain original figures or tables. If LibreOffice rendering is available, export PDF or PNG and inspect every slide visually. If rendering is blocked by the runtime, report that only structural checks were completed; do not claim visual QA passed.
 
 ## Evidence discipline
 
